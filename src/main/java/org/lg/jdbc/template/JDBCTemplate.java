@@ -1,4 +1,4 @@
-package org.lg.jdbc;
+package org.lg.jdbc.template;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,6 +28,10 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void save(Object po){
+		
 	}
 	
 	public void saveUser(){

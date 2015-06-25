@@ -1,11 +1,12 @@
 package org.lg.jdbc;
 
+import junit.framework.TestCase;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.lg.jdbc.template.JDBCTemplate;
 
 import com.alibaba.druid.pool.DruidDataSource;
-
-import junit.framework.TestCase;
 
 public class JDBCTemplateTest extends TestCase {
 	
