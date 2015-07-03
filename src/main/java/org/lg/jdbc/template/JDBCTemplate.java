@@ -1,10 +1,13 @@
 package org.lg.jdbc.template;
 
+import java.lang.annotation.Annotation;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+
+import org.lg.jdbc.annotation.Table;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -30,8 +33,13 @@ public class JDBCTemplate {
 		return null;
 	}
 	
+	/**
+	 * 保存
+	 * @param po
+	 */
 	public void save(Object po){
-		
+		Class pClass = po.getClass();
+		Annotation table = pClass.getAnnotation(Table.class);
 	}
 	
 	public void saveUser(){

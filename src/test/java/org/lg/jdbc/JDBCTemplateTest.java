@@ -1,5 +1,7 @@
 package org.lg.jdbc;
 
+import java.util.Date;
+
 import junit.framework.TestCase;
 
 import org.junit.Before;
@@ -30,5 +32,15 @@ public class JDBCTemplateTest extends TestCase {
 	@Test
 	public void testSaveUser(){
 		template.saveUser();
+	}
+	
+	@Test
+	public void testSave(){
+		User u = new User();
+		u.setId("1");
+		u.setName("张三");
+		u.setPwd("lg3625922");
+		u.setCreateTime(new Date());
+		template.save(u);
 	}
 }
