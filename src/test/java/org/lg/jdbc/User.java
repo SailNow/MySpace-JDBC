@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.lg.jdbc.annotation.Field;
+import org.lg.jdbc.annotation.ID;
 import org.lg.jdbc.annotation.Table;
-import org.lg.jdbc.annotation.Field.FieldType;
+import org.lg.jdbc.em.AutoStrategy;
+import org.lg.jdbc.em.FieldType;
 
 /**
  * 测试po
@@ -19,6 +21,7 @@ public class User implements Serializable{
 	 */
 	private static final long serialVersionUID = -1080247693014019704L;
 	
+	@ID(auto=true,strategy=AutoStrategy.AUTOINCREAMENT)
 	@Field(fieldName="id",type=FieldType.STRING)
 	private String id;
 	@Field(fieldName="username",type=FieldType.STRING)
@@ -27,6 +30,10 @@ public class User implements Serializable{
 	private String pwd;
 	@Field(fieldName="create_time", type=FieldType.DATA)
 	private Date createTime;
+	@Field(fieldName="remark", type=FieldType.STRING)
+	private String desc;
+	@Field(fieldName="avg", type=FieldType.DOUBLE)
+	private double avg;
 	
 	public String getId() {
 		return id;
@@ -51,5 +58,17 @@ public class User implements Serializable{
 	}
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public double getAvg() {
+		return avg;
+	}
+	public void setAvg(double avg) {
+		this.avg = avg;
 	}
 }

@@ -1,7 +1,11 @@
 package org.lg.jdbc.annotation;
 
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
+import org.lg.jdbc.em.FieldType;
 
 /**
 * 
@@ -9,10 +13,8 @@ import java.lang.annotation.Target;
 * @author <a href="sailnow@qq.com">lige</a>
 */
 @Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Field {
-	
-	/** 类型字段，先用常用的，以后用到再进行添加 */
-	public enum FieldType{STRING,INTEGER,DOUBLE,FLOAT,DATA};
 	
 	/** 字段名称 */
 	public String fieldName();
